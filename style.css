@@ -1,0 +1,172 @@
+/* Đặt đầu file CSS */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Sử dụng font */
+* {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    background-image: url("img/background2.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    cursor:url("img/pointer.png"),auto;
+}
+
+.box1 {
+    position: relative;
+    width: 600px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+     background-image: url("img/pixil-frame-2.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+
+    padding-top: 30px;
+
+}
+.box1 h2{
+    color: darkorchid;
+    text-align: center;
+}
+
+#inputText{
+    width: 500px;
+    height: 100px;
+    text-align: center;
+    border: none;
+    outline: none;
+
+    padding-left: 25px;
+    padding-right: 25px;
+
+    background-image: url("img/dialog.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: url("img/cursor.png"),auto;
+}
+
+.box2 {
+    position: relative;
+    width: 600px;
+    height: 600px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-image: url("img/pixil-frame-0.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+
+    padding-top: 30px;
+
+}
+
+ul {
+    width :550px;
+    height: 530px;
+    /* border: 1px solid red; */
+    font-size: 10px;
+    justify-items: center;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+ul::-webkit-scrollbar {
+    display: none; 
+}
+
+
+ul li {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+    width: 500px;
+    height: 50px;
+    
+    opacity: 1;
+    transition: 0.4s;
+}
+
+
+/* dấu tích */
+ul li .check {
+    width: 50px;
+    height: 50px;
+    background-image: url("img/Click_mark1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px 32px; /* icon 32px */
+    cursor: url("img/cursor.png"),auto;
+}
+
+ul li .check.complete {
+    background-image: url("img/Click_mark2.png");
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* nội dung */
+ul li .taskText {
+    width: 400px; 
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    color:saddlebrown;
+    
+    white-space: nowrap;        /* ❗ không xuống dòng */
+    overflow: hidden;           /* ❗ ẩn phần tràn */
+    text-overflow: ellipsis;
+    
+    background-image: url("img/dialog3.png");
+}
+
+/* dấu xoá */
+ul li .delete {
+    width: 50px;
+    height: 50px;
+    background-image: url("img/Click_mark3.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px 32px;
+    cursor: url("img/cursor.png"),auto;
+}
+
+ul li .removing{
+    opacity: 0;
+}
+/* rơi xuống*/
+.flower {
+  position: fixed;
+  top: -50px; /* bắt đầu từ trên màn hình */
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
